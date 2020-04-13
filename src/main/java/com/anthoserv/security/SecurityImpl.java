@@ -12,7 +12,7 @@ import java.util.Calendar;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang.time.DateFormatUtils;
 /**
- * Clase que permite  generar codigos de seguridad
+ * Clase que permite  generar códigos de seguridad
  * @author anthoserv
  */
 public class SecurityImpl implements Security {
@@ -71,7 +71,7 @@ public class SecurityImpl implements Security {
     }
 
     /**
-     *Permite obterner un codido basado en caracteres de acuerto a la longitud de las cadenas
+     *Permite obterner un código basado en caracteres de acuerdo a la longitud de las cadenas
      * @param length
      * @return
      */
@@ -94,7 +94,7 @@ public class SecurityImpl implements Security {
     }
 
    /**
-     * Permite generar un codigo de acuerdo a la fecha
+     * Permite generar un código de acuerdo a la fecha
      *
      * @return
      */
@@ -108,7 +108,7 @@ public class SecurityImpl implements Security {
         return utfi.toString();
     }
     /**
-     * Permite generar un token de acuerdo a una cadena de caracteres 
+     * Permite generar un token de acuerdo a una cadena de carácteres 
      * @param secureLength
      * @param pos_secret
      * @return 
