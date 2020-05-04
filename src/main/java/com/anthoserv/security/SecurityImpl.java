@@ -15,7 +15,7 @@ import org.apache.commons.lang.time.DateFormatUtils;
  * Clase que permite  generar códigos de seguridad
  * @author anthoserv
  */
-public class SecurityImpl implements Security {
+public class SecurityImpl  {
 
     public static String NUMEROS = "0123456789";
     public static String MAYUSCULAS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -26,7 +26,8 @@ public class SecurityImpl implements Security {
      * @return
      */
   
-    public static SecurityImpl newInstance() {
+ 
+    public static  SecurityImpl newInstance() {
         return new SecurityImpl();
     }
 
@@ -35,7 +36,6 @@ public class SecurityImpl implements Security {
      * @param args
      * @return 
      */
-    @Override
     public String SHA256(String args) {
         if (args == null) {
             return "";
@@ -75,7 +75,6 @@ public class SecurityImpl implements Security {
      * @param length
      * @return
      */
-    @Override
     public  String getPinLetters(int length) {
         return getPassword(NUMEROS + MAYUSCULAS + MINUSCULAS + ESPECIALES,
                 length);
@@ -88,7 +87,6 @@ public class SecurityImpl implements Security {
      * @param length
      * @return
      */
-    @Override
     public  String getPinNumber(int length) {
         return getPassword(NUMEROS, length);
     }
@@ -99,7 +97,6 @@ public class SecurityImpl implements Security {
      * @return
      */
    
-    @Override
     public String getPinFecha() {
         String patron = "yyMMddHHmmss";
         String timestamp = DateFormatUtils.format(Calendar.getInstance(), patron);
@@ -113,7 +110,6 @@ public class SecurityImpl implements Security {
      * @param pos_secret
      * @return 
      */
-    @Override
      public String nextToken(int secureLength,String pos_secret) {
         char[] buf = new char[secureLength];
         SecureRandom random = new SecureRandom();
