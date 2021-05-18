@@ -105,6 +105,6 @@ public class SaveFile {
         if (i >= 0) {
             extension = fileName.substring(i + 1);
         }
-        return "."+extension;
+        return "." + extension;
     }
 }
