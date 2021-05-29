@@ -22,7 +22,7 @@ public class SecurityImpl {
     public static String NUMEROS = "0123456789";
     public static String MAYUSCULAS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     public static String MINUSCULAS = "abcdefghijklmnopqrstuvwxyz";
-    public static String ESPECIALES = "#@%/?";
+    public static String ESPECIALES = "#@%/?.-_$&";
 
     /**
      *
@@ -99,6 +99,23 @@ public class SecurityImpl {
     public String getPinLetters(int length) {
         return getPassword(NUMEROS + MAYUSCULAS + MINUSCULAS + ESPECIALES,
                 length);
+    }
+/**
+     * Permite obterner un código basado en caracteres de acuerdo a la longitud
+     * de las cadenas
+     *
+     * @return
+     */
+    public String getPinLettersNumber() {
+        String numeros = getPassword(NUMEROS ,
+                2);
+        String letrasMayusculas = getPassword(MAYUSCULAS ,
+                3);
+        String letrasMinusculas = getPassword(MINUSCULAS ,
+                3);
+           String letrasEspeciales = getPassword(ESPECIALES ,
+                2);
+        return letrasMayusculas+letrasMinusculas+letrasEspeciales+numeros;
     }
 
     //
